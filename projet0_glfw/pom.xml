@@ -354,8 +354,31 @@
 		</dependency>
 		
 	</dependencies>
-
-
-
+	<build>
+        <pluginManagement>
+            <plugins>
+                <!-- Plugin responsable de la génération du fichier JAR -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>3.0.2</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+		<plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <!-- Création du Manifest pour la définition de la classe Main -->
+                        <manifest>
+                            <mainClass>main.MainInput</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+</build>
 
 </project>
