@@ -1,14 +1,22 @@
 package main;
 
-import static org.lwjgl.glfw.GLFW.*;
+import static org.lwjgl.glfw.GLFW.GLFW_FALSE;
+import static org.lwjgl.glfw.GLFW.GLFW_JOYSTICK_1;
+import static org.lwjgl.glfw.GLFW.GLFW_JOYSTICK_2;
+import static org.lwjgl.glfw.GLFW.GLFW_JOYSTICK_HAT_BUTTONS;
+import static org.lwjgl.glfw.GLFW.glfwGetJoystickButtons;
+import static org.lwjgl.glfw.GLFW.glfwGetJoystickName;
+import static org.lwjgl.glfw.GLFW.glfwInit;
+import static org.lwjgl.glfw.GLFW.glfwInitHint;
+import static org.lwjgl.glfw.GLFW.glfwTerminate;
 
 import java.nio.ByteBuffer;
 
 import org.lwjgl.glfw.GLFWErrorCallback;
 
 public class InputDetection {
-	  private boolean joystickPresent1;
-	  private boolean joystickPresent2;
+//	  private boolean joystickPresent1;
+//	  private boolean joystickPresent2;
 	  private String nameJoystick1;
 	  private String nameJoystick2;
 	  private ByteBuffer buttonsJ1;
@@ -33,8 +41,8 @@ public class InputDetection {
 			
 	  }
 	void doDetection() {
-		  joystickPresent1 = glfwJoystickPresent (GLFW_JOYSTICK_1);
-		  joystickPresent2 = glfwJoystickPresent (GLFW_JOYSTICK_2);
+//		  joystickPresent1 = glfwJoystickPresent (GLFW_JOYSTICK_1);
+//		  joystickPresent2 = glfwJoystickPresent (GLFW_JOYSTICK_2);
 		  nameJoystick1= glfwGetJoystickName(GLFW_JOYSTICK_1);
 		  nameJoystick2= glfwGetJoystickName(GLFW_JOYSTICK_2);
 		  buttonsJ1=glfwGetJoystickButtons(GLFW_JOYSTICK_1);
