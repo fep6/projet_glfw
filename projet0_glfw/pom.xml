@@ -358,11 +358,16 @@
         <pluginManagement>
             <plugins>
                 <!-- Plugin responsable de la génération du fichier JAR -->
-                <plugin>
+               	<plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>3.0.2</version>
                 </plugin>
+                <plugin>
+			        <groupId>com.googlecode.mavennatives</groupId>
+			        <artifactId>maven-nativedependencies-plugin</artifactId>
+			        <version>0.0.5</version>
+				</plugin>
             </plugins>
         </pluginManagement>
 		<plugins>
@@ -378,7 +383,8 @@
                     </archive>
                 </configuration>
             </plugin>
-        </plugins>
-</build>
+
+       	</plugins>
+     </build>
 
 </project>
