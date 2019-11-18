@@ -34,14 +34,10 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/fep/git/projet0_glfw/projet0_glfw/lwjgl-3.2.3.jar">
+	<classpathentry kind="lib" path="lwjgl-3.2.3.jar"/>
+	<classpathentry kind="lib" path="lwjgl-glfw-3.2.3.jar">
 		<attributes>
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="D:/eclipse/lwjgl"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/fep/git/projet0_glfw/projet0_glfw/lwjgl-glfw-3.2.3.jar">
-		<attributes>
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="D:/eclipse/lwjgl"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="D:/eclipse/lwjgl/glfw/lib-vc2019"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>

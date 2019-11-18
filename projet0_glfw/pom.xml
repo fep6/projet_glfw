@@ -368,6 +368,66 @@
 			        <artifactId>maven-nativedependencies-plugin</artifactId>
 			        <version>0.0.5</version>
 				</plugin>
+						<plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-shade-plugin</artifactId>
+		    <version>3.0.0</version>
+		    <configuration>
+		        <createDependencyReducedPom>false</createDependencyReducedPom>
+		        <filters>
+		            <filter>
+		                <artifact>*:*</artifact>
+		                <excludes>
+		                    <exclude>META-INF/*.SF</exclude>
+		                    <exclude>META-INF/*.DSA</exclude>
+		                    <exclude>META-INF/*.RSA</exclude>
+		                </excludes>
+		            </filter>
+		        </filters>
+		    </configuration>
+		    <executions>
+		        <execution>
+		            <phase>package</phase>
+		            <goals>
+		                <goal>shade</goal>
+		            </goals>
+		            <configuration>
+		                <transformers>
+		                    <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
+		                    <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+		                        <mainClass>main/MainInput</mainClass>
+		                        <manifestEntries>
+		                            <Class-Path>..</Class-Path>
+		                        </manifestEntries>
+		                    </transformer>
+		
+		                    <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+		                        <resource>META-INF/cxf/bus-extensions.txt</resource>
+		                    </transformer>
+		
+		                </transformers>
+		            </configuration>
+		        </execution>
+		    </executions>
+		</plugin>
+
+
+		<plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-dependency-plugin</artifactId>
+		    <executions>
+		        <execution>
+		             <id>copy-dependencies</id>
+		             <phase>package</phase>
+		             <goals>
+		                 <goal>copy-dependencies</goal>
+		             </goals>
+		             <configuration>
+		                 <outputDirectory>${project.build.directory}/lib</outputDirectory>
+		             </configuration>
+		        </execution>
+		     </executions>
+		</plugin>
             </plugins>
         </pluginManagement>
 		<plugins>
@@ -376,7 +436,7 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <configuration>
                     <archive>
-                        <!-- Création du Manifest pour la définition de la classe Main -->
+                        Création du Manifest pour la définition de la classe Main
                         <manifest>
                             <mainClass>main.MainInput</mainClass>
                         </manifest>
@@ -385,6 +445,7 @@
             </plugin>
 
        	</plugins>
+       	
      </build>
 
 </project>
