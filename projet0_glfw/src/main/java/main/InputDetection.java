@@ -14,6 +14,8 @@ public class InputDetection {
 	  private ByteBuffer buttonsJ1;
 	  private ByteBuffer buttonsJ2;
 	  
+	  //essai
+	  
 	  InputDetection(){
 		  init();
 		  doDetection();
